@@ -1,9 +1,9 @@
-import { Geist_Mono } from 'next/font/google'
+import { Geist_Sans } from 'next/font/google'
 import './globals.css'
 
-const geistMono = Geist_Mono({
+const geistSans = Geist_Sans({
   subsets: ['latin'],
-  variable: '--font-geist-mono',
+  variable: '--font-geist-sans',
 })
 
 export const metadata = {
@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={geistMono.variable}>
-      <body className="font-mono bg-white text-black">{children}</body>
+    <html lang="en" className={geistSans.variable}>
+      <body className="font-geistSans bg-white text-black">{children}</body>
     </html>
   )
 }
