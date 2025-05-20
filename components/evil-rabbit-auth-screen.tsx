@@ -2,9 +2,12 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { useState } from "react"
+import { Eye, EyeOff } from "lucide-react"
 import Image from "next/image"
 
 export default function EvilRabbitAuthScreen() {
+  const [showPassword, setShowPassword] = useState(false)
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black">
       <Card
@@ -43,18 +46,28 @@ export default function EvilRabbitAuthScreen() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password" className="text-[#A0A0A0]">
-              Password
-            </Label>
-            <Input
-              id="password"
-              type="password"
-              placeholder="••••••••"
-              required
-              className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
-              style={{ borderColor: "#333333" }}
-            />
-          </div>
+  <Label htmlFor="password" className="text-[#A0A0A0]">
+    Password
+  </Label>
+  <div className="relative">
+    <Input
+      id="password"
+      type={showPassword ? "text" : "password"}
+      placeholder="••••••••"
+      required
+      className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white pr-10"
+      style={{ borderColor: "#333333" }}
+    />
+    <button
+      type="button"
+      onClick={() => setShowPassword(!showPassword)}
+      className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] hover:text-white"
+      aria-label="Toggle password visibility"
+    >
+      {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+    </button>
+  </div>
+</div>
 
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center space-x-2 text-[#666666]">
@@ -64,7 +77,7 @@ export default function EvilRabbitAuthScreen() {
                 />
               <span>Remember me</span>
             </label>
-            <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#444444]">
+            <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#666666]">
               Forgot Password?
             </a>
           </div>
@@ -73,13 +86,13 @@ export default function EvilRabbitAuthScreen() {
             type="submit"
             className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#333333] hover:text-white"
           >
-            Login
+            Log In
           </Button>
         </form>
 
         <div className="text-center text-sm text-[#666666]">
           Don’t have an account?{" "}
-          <a href="/register" className="text-[#FFFFFF] hover:text-[#444444]">
+          <a href="/register" className="text-[#FFFFFF] hover:text-[#666666]">
             Sign Up
           </a>
         </div>
