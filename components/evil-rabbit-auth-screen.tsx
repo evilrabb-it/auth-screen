@@ -39,7 +39,7 @@ export default function TeamAuth() {
   }  
   return (
   <div className="min-h-screen flex items-center justify-center px-4 bg-black">
-    <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-md border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+    <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
       {!isRequestingAccess ? (
         <>
           <div className="text-center space-y-3">
@@ -56,7 +56,7 @@ export default function TeamAuth() {
                 type="email"
                 placeholder="your@example.com"
                 required
-                className="bg-black border text-[#FFFFFF] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+                className="bg-black border text-[#FFFFFF] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white"
                 style={{ borderColor: "#333333" }}
               />
             </div>
@@ -69,7 +69,7 @@ export default function TeamAuth() {
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   required
-                  className="bg-black border text-[#FFFFFF] placeholder-[#2E2E2E] focus:border-white focus:ring-white pr-10"
+                  className="bg-black border text-[#FFFFFF] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white pr-10"
                   style={{ borderColor: "#333333" }}
                 />
                 <button
@@ -90,7 +90,7 @@ export default function TeamAuth() {
                   id="role"
                   value={role}
                   onChange={e => setRole(e.target.value)}
-                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
+                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded-md w-full focus:border-white focus:ring-white"
                 >
                   <option value="select role">Select Role</option>
                   <option value="designer">Designer</option>
@@ -151,7 +151,7 @@ export default function TeamAuth() {
                   onChange={e => setAccessEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white"
                   style={{ borderColor: "#333333" }}
                 />
               </div>
@@ -164,7 +164,7 @@ export default function TeamAuth() {
                   onChange={e => setAccessReason(e.target.value)}
                   placeholder="Explain why you need access"
                   required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded"
+                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded"
                   style={{ borderColor: "#333333" }}
                 />
               </div>
