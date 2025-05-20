@@ -123,6 +123,7 @@ export default function TeamAuth() {
   <Button type="submit" className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
     Log In
   </Button>
+         </form>
           </>
         ) : (
           <>
