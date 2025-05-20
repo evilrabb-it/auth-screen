@@ -13,6 +13,9 @@ export default function TeamAuth() {
   const [accessEmail, setAccessEmail] = useState("")
   const [accessReason, setAccessReason] = useState("")
   const [requestStatus, setRequestStatus] = useState<"idle" | "submitted" | "error">("idle")
+  const [isForgotPassword, setIsForgotPassword] = useState(false)
+const [forgotEmail, setForgotEmail] = useState("")
+const [forgotStatus, setForgotStatus] = useState<"idle" | "loading" | "sent" | "error">("idle")
 
   // Login handler
   function handleLogin(e: React.FormEvent) {
@@ -112,9 +115,13 @@ export default function TeamAuth() {
                   className="w-4 h-4 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
                 />
                 <span>Remember me</span>
-              </label>
-              <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#666666]">Forgot Password?</a>
-            </div>
+              <button
+                type="button"
+                onClick={() => setIsForgotPassword(true)}
+                className="text-[#FFFFFF] hover:text-[#666666] focus:outline-none"
+                >
+                Forgot Password?
+              </button>
 
             <Button type="submit" className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
               Log In
@@ -185,7 +192,65 @@ export default function TeamAuth() {
                 </Button>
               </div>
             </form>
-          </>
+            
+            {isForgotPassword ? (
+          <>
+    <div className="text-center">
+      <h2 className="text-xl font-semibold text-white">Reset Password</h2>
+      <p className="text-sm mt-1 text-[#A0A0A0]">We’ll send a reset link to your email</p>
+    </div>
+
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        setForgotStatus("loading")
+        // Simulasi pengiriman email
+        setTimeout(() => {
+          if (forgotEmail) {
+            setForgotStatus("sent")
+          } else {
+            setForgotStatus("error")
+          }
+        }, 1000)
+      }}
+      className="space-y-4"
+    >
+      <div className="space-y-2">
+        <Label htmlFor="forgotEmail" className="text-[#A0A0A0]">Email</Label>
+        <Input
+          id="forgotEmail"
+          type="email"
+          value={forgotEmail}
+          onChange={e => setForgotEmail(e.target.value)}
+          placeholder="your@email.com"
+          required
+          className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+          style={{ borderColor: "#333333" }}
+        />
+      </div>
+
+      {forgotStatus === "sent" && (
+        <p className="text-green-500 text-sm">Reset link sent! Check your inbox.</p>
+      )}
+      {forgotStatus === "error" && (
+        <p className="text-red-500 text-sm">Please enter a valid email address.</p>
+      )}
+
+      <div className="flex justify-between">
+        <Button type="button" variant="secondary" onClick={() => {
+          setIsForgotPassword(false)
+          setForgotStatus("idle")
+          setForgotEmail("")
+        }}>
+          Back
+        </Button>
+        <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
+          Send Reset Link
+        </Button>
+      </div>
+    </form>
+  </>
+) : (
         )}
       </Card>
     </div>
