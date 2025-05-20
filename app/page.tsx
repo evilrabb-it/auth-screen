@@ -1,7 +1,7 @@
 "use client";
 
-import EvilRabbitAuthScreen from "../components/evil-rabbit-auth-screen";
+import TeamAuth from "../components/team-auth";
 
 export default function Page() {
-  return <EvilRabbitAuthScreen />;
+  return <TeamAuth />;
 }
