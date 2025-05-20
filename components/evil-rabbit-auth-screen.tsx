@@ -29,7 +29,7 @@ export default function EvilRabbitAuthScreen() {
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email" style={{ color: "#878787" }}>
+            <Label htmlFor="email" style={{ color: "#A0A0A0" }}>
               Email
             </Label>
             <Input
@@ -43,7 +43,7 @@ export default function EvilRabbitAuthScreen() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password" style={{ color: "#878787" }}>
+            <Label htmlFor="password" style={{ color: "#A0A0A0" }}>
               Password
             </Label>
             <Input
@@ -56,15 +56,15 @@ export default function EvilRabbitAuthScreen() {
             />
           </div>
 
-          <div className="text-center">
-            <a href="/forgot-password" className="text-sm underline" style={{ color: "#666666" }}>
+          <div className="text-right">
+            <a href="/forgot-password" className="text-sm underline" style={{ color: "#878787" }}>
               Forgot Password?
             </a>
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-white text-black font-medium hover:bg-black hover:text-white border border-transparent"
+            className="w-full bg-white text-black font-medium border border-transparent hover:bg-black hover:text-white hover:border-white focus:border-white focus:ring-white active:border-white"
           >
             Login
           </Button>
