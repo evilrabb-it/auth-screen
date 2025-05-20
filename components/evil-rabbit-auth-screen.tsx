@@ -37,7 +37,7 @@ export default function EvilRabbitAuthScreen() {
               type="email"
               placeholder="your@email.com"
               required
-              className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white"
+              className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white active:border-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
@@ -51,7 +51,7 @@ export default function EvilRabbitAuthScreen() {
               type="password"
               placeholder="••••••••"
               required
-              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white"
+              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white focus:ring-white active:border-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
@@ -64,8 +64,8 @@ export default function EvilRabbitAuthScreen() {
 
           <Button
             type="submit"
-            className="w-full bg-white text-black font-medium border border-transparent hover:bg-black hover:text-white hover:border-white focus:border-white focus:ring-white active:border-white"
-          >
+            className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#333333] hover:text-white focus:border-white focus:ring-white active:border-white"
+            >
             Login
           </Button>
         </form>
