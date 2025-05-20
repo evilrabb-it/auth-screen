@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={GeistMono.variable}>
+    <html lang="en" className={GeistMono.className}>
       <body className="font-mono bg-white text-black">{children}</body>
     </html>
   )
