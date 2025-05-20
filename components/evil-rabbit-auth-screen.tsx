@@ -7,6 +7,13 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
 import { Eye, EyeOff } from "lucide-react"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function TeamAuth() {
   const [showPassword, setShowPassword] = useState(false)
@@ -100,19 +107,16 @@ export default function TeamAuth() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
-                <div className="relative">
-                  <select
-                    id="role"
-                    value={role}
-                    onChange={e => setRole(e.target.value)}
-                    className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded-md w-full focus:border-white focus:ring-white"
-                  >
-                    <option value="select role">Select Role</option>
-                    <option value="designer">Designer</option>
-                    <option value="developer">Developer</option>
-                    <option value="admin">Admin</option>
-                  </select>
-                </div>
+                <Select onValueChange={setRole} value={role}>
+                  <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-white">
+                    <SelectValue placeholder="Select Role" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black text-white border-[#333333]">
+                    <SelectItem value="designer">Designer</SelectItem>
+                    <SelectItem value="developer">Developer</SelectItem>
+                    <SelectItem value="admin">Admin</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="flex items-center justify-between text-sm mt-1">
