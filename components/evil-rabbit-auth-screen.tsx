@@ -50,7 +50,6 @@ export default function TeamAuth() {
             </div>
 
             <form onSubmit={handleLogin} className="space-y-4">
-  {/* Email */}
   <div className="space-y-1.5">
     <Label htmlFor="email" className="text-sm text-[#A0A0A0]">Email Address</Label>
     <Input
@@ -63,7 +62,6 @@ export default function TeamAuth() {
     />
   </div>
 
-  {/* Password */}
   <div className="space-y-1.5">
     <Label htmlFor="password" className="text-sm text-[#A0A0A0]">Password</Label>
     <div className="relative">
@@ -86,7 +84,6 @@ export default function TeamAuth() {
     </div>
   </div>
 
-  {/* Role */}
   <div className="space-y-1.5">
     <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
     <div className="relative">
@@ -111,7 +108,6 @@ export default function TeamAuth() {
     </div>
   </div>
 
-  {/* Remember & Forgot */}
   <div className="flex items-center justify-between text-sm mt-1">
     <label className="flex items-center space-x-2 text-[#A0A0A0]">
       <input
@@ -127,7 +123,6 @@ export default function TeamAuth() {
   <Button type="submit" className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
     Log In
   </Button>
-            </div>
           </>
         ) : (
           <>
