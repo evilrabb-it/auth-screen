@@ -87,15 +87,15 @@ export default function TeamAuth() {
           </div>
 
               <div>
-                <Label htmlFor="role" className="text-[#FFFFFF]">Select Role</Label>
+                <Label htmlFor="role" className="text-[#A0A0A0]">Select Role</Label>
                 <select
                   id="role"
                   value={role}
                   onChange={e => setRole(e.target.value)}
-                  className="bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
+                  className="bg-black border border-[#333333] text-[#FFFFFF] p-2 rounded w-full focus:border-white focus:ring-white"
                 >
-                  <option value="developer">Developer</option>
                   <option value="designer">Designer</option>
+                  <option value="developer">Developer</option>
                   <option value="admin">Admin</option>
                 </select>
               </div>
