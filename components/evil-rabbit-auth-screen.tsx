@@ -66,6 +66,7 @@ export default function TeamAuth() {
             <Label htmlFor="password" className="text-[#A0A0A0]">
               Password
             </Label>
+                
             <div className="relative">
               <Input
                 id="password"
@@ -86,18 +87,25 @@ export default function TeamAuth() {
             </div>
           </div>
 
-              <div>
+              <div className="relative w-full">
   <select
     id="role"
     value={role}
     onChange={e => setRole(e.target.value)}
-    className="bg-black border border-[#333333] text-[#666666] p-2 w-full focus:border-white focus:ring-white text-[#FFFFFF]"
+    className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
   >
-    <option value="Select Role">Select Role</option>
+    <option value="" disabled>
+      Select Role
+    </option>
     <option value="designer">Designer</option>
     <option value="developer">Developer</option>
     <option value="admin">Admin</option>
   </select>
+  <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-[#666666]">
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 </div>
 
               <div className="flex items-center justify-between text-sm">
