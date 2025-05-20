@@ -17,7 +17,7 @@ import {
 
 export default function TeamAuth() {
   const [showPassword, setShowPassword] = useState(false)
-  const [role, setRole] = useState("select role")
+  const [role, setRole] = useState("")
   const [isRequestingAccess, setIsRequestingAccess] = useState(false)
   const [accessEmail, setAccessEmail] = useState("")
   const [accessReason, setAccessReason] = useState("")
