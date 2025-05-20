@@ -136,7 +136,7 @@ export default function TeamAuth() {
         </>
       ) : (
           <>
-            <div className="text-center">
+            <div className="text-center mb-4">
               <h2 className="text-xl font-semibold text-white">Request Team Access</h2>
               <p className="text-sm mt-1 text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
             </div>
@@ -152,7 +152,7 @@ export default function TeamAuth() {
                   placeholder="your@email.com"
                   required
                   className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
-                  style={{ borderColor: "#333333" }}
+                  style={{ borderColor: '#333333' }}
                 />
               </div>
 
@@ -164,19 +164,19 @@ export default function TeamAuth() {
                   onChange={e => setAccessReason(e.target.value)}
                   placeholder="Explain why you need access"
                   required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded"
-                  style={{ borderColor: "#333333" }}
+                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded-md min-h-[96px]"
+                  style={{ borderColor: '#333333' }}
                 />
               </div>
 
-              {requestStatus === "error" && (
-                <p className="text-red-500 text-sm">Please fill all fields.</p>
+              {requestStatus === 'error' && (
+                <p className="text-red-500 text-sm mt-2">Please fill all fields.</p>
               )}
-              {requestStatus === "submitted" && (
-                <p className="text-green-500 text-sm">Request submitted! Please wait for approval.</p>
+              {requestStatus === 'submitted' && (
+                <p className="text-green-500 text-sm mt-2">Request submitted! Please wait for approval.</p>
               )}
 
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-2">
                 <Button type="button" variant="secondary" onClick={() => setIsRequestingAccess(false)}>
                   Back to Login
                 </Button>
