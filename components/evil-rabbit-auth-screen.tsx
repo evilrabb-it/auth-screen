@@ -60,7 +60,7 @@ export default function EvilRabbitAuthScreen() {
             <label className="flex items-center space-x-2 text-[#666666]">
               <input
                 type="checkbox"
-                className="w-4 h-4 border border-[#333333] bg-white appearance-none checked:bg-white checked:border-black checked:[&:checked::before]:content-['✓'] checked:[&:checked::before]:text-black checked:[&:checked::before]:text-xs checked:[&:checked::before]:block checked:[&:checked::before]:text-center checked:[&:checked::before]:leading-4"
+                className="w-5 h-5 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
                 />
               <span>Remember me</span>
             </label>
