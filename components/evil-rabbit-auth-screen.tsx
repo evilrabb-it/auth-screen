@@ -15,8 +15,8 @@ export default function EvilRabbitAuthScreen() {
           <Image
             src="/evilrabbit.svg"
             alt="Evil Rabbit"
-            width={80}
-            height={80}
+            width={96}
+            height={96}
             className="mx-auto"
           />
           <h1 className="text-2xl font-semibold mt-4 tracking-tight text-white">
@@ -60,11 +60,11 @@ export default function EvilRabbitAuthScreen() {
             <label className="flex items-center space-x-2 text-[#666666]">
               <input
                 type="checkbox"
-                className="w-5 h-5 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
+                className="w-4 h-4 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
                 />
               <span>Remember me</span>
             </label>
-            <a href="/forgot-password" className="text-[#666666] underline hover:text-gray-400">
+            <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#444444]">
               Forgot Password?
             </a>
           </div>
@@ -79,8 +79,8 @@ export default function EvilRabbitAuthScreen() {
 
         <div className="text-center text-sm text-[#666666]">
           Don’t have an account?{" "}
-          <a href="/register" className="underline hover:text-gray-400">
-            Register
+          <a href="/register" className="text-[#FFFFFF] hover:text-[#444444]">
+            Sign Up
           </a>
         </div>
       </Card>
