@@ -1,4 +1,3 @@
-import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 
 export const metadata = {
@@ -12,10 +11,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
-      <body className="bg-white text-black">
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   )
 }
