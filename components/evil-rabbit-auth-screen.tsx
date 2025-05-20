@@ -25,7 +25,7 @@ export default function EvilRabbitAuthScreen() {
           <h1 className="text-2xl font-semibold mt-4 tracking-tight text-white">
             Hello, Evil Rabbit
           </h1>
-          <p className="text-sm mt-2 text-[#666666]">
+          <p className="text-sm mt-2 text-[#A0A0A0]">
             Log in to access your space
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function EvilRabbitAuthScreen() {
 </div>
 
           <div className="flex items-center justify-between text-sm">
-            <label className="flex items-center space-x-2 text-[#666666]">
+            <label className="flex items-center space-x-2 text-[#A0A0A0]">
               <input
                 type="checkbox"
                 className="w-4 h-4 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
@@ -84,13 +84,13 @@ export default function EvilRabbitAuthScreen() {
 
           <Button
             type="submit"
-            className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#333333] hover:text-white"
+            className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
           >
             Log In
           </Button>
         </form>
 
-        <div className="text-center text-sm text-[#666666]">
+        <div className="text-center text-sm text-[#A0A0A0]">
           Don’t have an account?{" "}
           <a href="/register" className="text-[#FFFFFF] hover:text-[#666666]">
             Sign Up
