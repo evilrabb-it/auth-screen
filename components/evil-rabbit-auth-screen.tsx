@@ -50,89 +50,83 @@ export default function TeamAuth() {
             </div>
 
             <form onSubmit={handleLogin} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-[#A0A0A0]">Email Address</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@example.com"
-                  required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
-                  style={{ borderColor: "#333333" }}
-                />
-              </div>
-
-              <div className="space-y-2">
-            <Label htmlFor="password" className="text-[#A0A0A0]">
-              Password
-            </Label>
-                
-            <div className="relative">
-              <Input
-                id="password"
-                type={showPassword ? "text" : "password"}
-                placeholder="••••••••"
-                required
-                className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white pr-10"
-                style={{ borderColor: "#333333" }}
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#666666] hover:text-white"
-                aria-label="Toggle password visibility"
-              >
-                {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
-              </button>
-            </div>
-          </div>
-
-              <div className="relative w-full">
-  <select
-    id="role"
-    value={role}
-    onChange={e => setRole(e.target.value)}
-    className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
-  >
-    <option value="" disabled>
-      Select Role
-    </option>
-    <option value="designer">Designer</option>
-    <option value="developer">Developer</option>
-    <option value="admin">Admin</option>
-  </select>
-  <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-[#666666]">
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-    </svg>
+  {/* Email */}
+  <div className="space-y-1.5">
+    <Label htmlFor="email" className="text-sm text-[#A0A0A0]">Email Address</Label>
+    <Input
+      id="email"
+      type="email"
+      placeholder="your@example.com"
+      required
+      className="bg-black border text-[#FFFFFF] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+      style={{ borderColor: "#333333" }}
+    />
   </div>
-</div>
 
-              <div className="flex items-center justify-between text-sm">
-                <label className="flex items-center space-x-2 text-[#A0A0A0]">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
-                  />
-                  <span>Remember me</span>
-                </label>
-                <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#666666]">Forgot Password?</a>
-              </div>
+  {/* Password */}
+  <div className="space-y-1.5">
+    <Label htmlFor="password" className="text-sm text-[#A0A0A0]">Password</Label>
+    <div className="relative">
+      <Input
+        id="password"
+        type={showPassword ? "text" : "password"}
+        placeholder="••••••••"
+        required
+        className="bg-black border text-[#FFFFFF] placeholder-[#2E2E2E] focus:border-white focus:ring-white pr-10"
+        style={{ borderColor: "#333333" }}
+      />
+      <button
+        type="button"
+        onClick={() => setShowPassword(!showPassword)}
+        className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#666666] hover:text-white"
+        aria-label="Toggle password visibility"
+      >
+        {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
+      </button>
+    </div>
+  </div>
 
-              <Button type="submit" className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">Log In</Button>
-            </form>
+  {/* Role */}
+  <div className="space-y-1.5">
+    <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
+    <div className="relative">
+      <select
+        id="role"
+        value={role}
+        onChange={e => setRole(e.target.value)}
+        className="appearance-none bg-black border border-[#333333] text-[#FFFFFF] p-2 rounded w-full focus:border-white focus:ring-white"
+      >
+        <option value="" disabled hidden>
+          Select Role
+        </option>
+        <option value="designer">Designer</option>
+        <option value="developer">Developer</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-[#666666]">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  </div>
 
-            <div className="text-center text-sm text-[#A0A0A0] mt-4">
-              Don’t have access yet?{" "}
-              <button
-                className="text-[#FFFFFF] hover:text-[#666666] focus:outline-none"
-                onClick={() => {
-                  setIsRequestingAccess(true)
-                  setRequestStatus("idle")
-                }}
-              >
-                Request Access
-              </button>
+  {/* Remember & Forgot */}
+  <div className="flex items-center justify-between text-sm mt-1">
+    <label className="flex items-center space-x-2 text-[#A0A0A0]">
+      <input
+        type="checkbox"
+        className="w-4 h-4 border border-[#333333] bg-black checked:bg-black checked:border-[#333333] focus:ring-white"
+      />
+      <span>Remember me</span>
+    </label>
+    <a href="/forgot-password" className="text-[#FFFFFF] hover:text-[#666666]">Forgot Password?</a>
+  </div>
+
+  {/* Button */}
+  <Button type="submit" className="w-full bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
+    Log In
+  </Button>
             </div>
           </>
         ) : (
