@@ -16,6 +16,7 @@ export default function EvilRabbitAuthScreen() {
               fill
               className="object-contain"
               />
+            </div>
           <h1 className="text-2xl font-semibold text-white mt-4 tracking-tight">Hello Evil Rabbit</h1>
           <p className="text-sm text-neutral-400 mt-2">Log in to access your space</p>
         </div>
