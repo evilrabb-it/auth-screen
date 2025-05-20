@@ -56,12 +56,15 @@ export default function EvilRabbitAuthScreen() {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-sm gap-2">
+          <div className="flex items-center justify-between text-sm">
             <label className="flex items-center space-x-2 text-[#666666]">
-              <input type="checkbox" className="accent-white" />
+              <input
+                type="checkbox"
+                className="w-4 h-4 border border-[#333333] bg-white appearance-none checked:bg-white checked:border-black checked:[&:checked::before]:content-['✓'] checked:[&:checked::before]:text-black checked:[&:checked::before]:text-xs checked:[&:checked::before]:block checked:[&:checked::before]:text-center checked:[&:checked::before]:leading-4"
+                />
               <span>Remember me</span>
             </label>
-            <a href="/forgot-password" className="text-[#666666] underline hover:text-gray-400 text-right">
+            <a href="/forgot-password" className="text-[#666666] underline hover:text-gray-400">
               Forgot Password?
             </a>
           </div>
