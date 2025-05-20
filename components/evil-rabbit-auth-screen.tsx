@@ -15,11 +15,11 @@ export default function EvilRabbitAuthScreen() {
           <Image
             src="/evilrabbit.svg"
             alt="Evil Rabbit"
-            width={80}
-            height={80}
+            width={72}
+            height={72}
             className="mx-auto"
           />
-          <h1 className="text-2xl font-semibold mt-4 tracking-tight" style={{ color: "#ffffff" }}>
+          <h1 className="text-2xl font-semibold mt-4 tracking-tight" style={{ color: "#FFFFFF" }}>
             Hello, Evil Rabbit
           </h1>
           <p className="text-sm mt-2" style={{ color: "#666666" }}>
@@ -29,7 +29,7 @@ export default function EvilRabbitAuthScreen() {
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email" style={{ color: "#666666" }}>
+            <Label htmlFor="email" style={{ color: "#878787" }}>
               Email
             </Label>
             <Input
@@ -37,13 +37,13 @@ export default function EvilRabbitAuthScreen() {
               type="email"
               placeholder="your@email.com"
               required
-              className="bg-black border text-gray-600 placeholder-[#1a1a1a] focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white focus:ring-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password" style={{ color: "#666666" }}>
+            <Label htmlFor="password" style={{ color: "#878787" }}>
               Password
             </Label>
             <Input
@@ -51,15 +51,20 @@ export default function EvilRabbitAuthScreen() {
               type="password"
               placeholder="••••••••"
               required
-              className="bg-black border text-gray-600 placeholder-[#1a1a1a] focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white focus:ring-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
 
+          <div className="text-center">
+            <a href="/forgot-password" className="text-sm underline" style={{ color: "#666666" }}>
+              Forgot Password?
+            </a>
+          </div>
+
           <Button
             type="submit"
-            className="w-full bg-black border font-medium hover:bg-gray-900"
-            style={{ borderColor: "#333333", color: "#666666" }}
+            className="w-full bg-white text-black font-medium hover:bg-black hover:text-white border border-transparent"
           >
             Login
           </Button>
