@@ -1,7 +1,7 @@
 "use client"
 
-import NexusNewsletterSignup from "../nexus-newsletter-signup"
+import EvilRabbitAuthScreen from "../components/evil-rabbit-auth-screen"
 
-export default function SyntheticV0PageForDeployment() {
-  return <NexusNewsletterSignup />
+export default function EvilRabbitLoginPage() {
+  return <EvilRabbitAuthScreen />
 }
