@@ -15,8 +15,8 @@ export default function EvilRabbitAuthScreen() {
           <Image
             src="/evilrabbit.svg"
             alt="Evil Rabbit"
-            width={72}
-            height={72}
+            width={80}
+            height={80}
             className="mx-auto"
           />
           <h1 className="text-2xl font-semibold mt-4 tracking-tight" style={{ color: "#FFFFFF" }}>
@@ -37,7 +37,7 @@ export default function EvilRabbitAuthScreen() {
               type="email"
               placeholder="your@email.com"
               required
-              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
@@ -51,13 +51,13 @@ export default function EvilRabbitAuthScreen() {
               type="password"
               placeholder="••••••••"
               required
-              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
 
-          <div className="text-right">
-            <a href="/forgot-password" className="text-sm underline" style={{ color: "#878787" }}>
+          <div className="text-center">
+            <a href="/forgot-password" className="text-sm underline" style={{ color: "#666666" }}>
               Forgot Password?
             </a>
           </div>
