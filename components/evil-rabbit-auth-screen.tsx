@@ -6,30 +6,30 @@ import Image from "next/image"
 
 export default function EvilRabbitAuthScreen() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-4">
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "#000000", padding: "1rem" }}>
       <Card
-        className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border border-neutral-800"
-        style={{ backgroundColor: "#000000" }}
+        className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border"
+        style={{ backgroundColor: "#000000", borderColor: "#333333" }}
       >
         <div className="text-center">
           <Image
             src="/evilrabbit.svg"
             alt="Evil Rabbit"
-            width={72}
-            height={72}
+            width={80}
+            height={80}
             className="mx-auto"
           />
-          <h1 className="text-2xl font-semibold text-white mt-4 tracking-tight">
+          <h1 className="text-2xl font-semibold mt-4 tracking-tight" style={{ color: "#ffffff" }}>
             Hello, Evil Rabbit
           </h1>
-          <p className="text-sm text-neutral-400 mt-2">
+          <p className="text-sm mt-2" style={{ color: "#666666" }}>
             Log in to access your space
           </p>
         </div>
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-neutral-300">
+            <Label htmlFor="email" style={{ color: "#666666" }}>
               Email
             </Label>
             <Input
@@ -37,12 +37,13 @@ export default function EvilRabbitAuthScreen() {
               type="email"
               placeholder="your@email.com"
               required
-              className="bg-neutral-800 border-neutral-700 text-white placeholder-neutral-500 focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#1a1a1a] focus:border-white focus:ring-white"
+              style={{ borderColor: "#333333" }}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password" className="text-neutral-300">
+            <Label htmlFor="password" style={{ color: "#666666" }}>
               Password
             </Label>
             <Input
@@ -50,21 +51,23 @@ export default function EvilRabbitAuthScreen() {
               type="password"
               placeholder="••••••••"
               required
-              className="bg-neutral-800 border-neutral-700 text-white placeholder-neutral-500 focus:border-white focus:ring-white"
+              className="bg-black border text-gray-600 placeholder-[#1a1a1a] focus:border-white focus:ring-white"
+              style={{ borderColor: "#333333" }}
             />
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-white text-black font-medium hover:bg-neutral-200"
+            className="w-full bg-black border font-medium hover:bg-gray-900"
+            style={{ borderColor: "#333333", color: "#666666" }}
           >
             Login
           </Button>
         </form>
 
-        <div className="text-center text-sm text-neutral-500">
+        <div className="text-center text-sm" style={{ color: "#666666" }}>
           Don’t have an account?{" "}
-          <a href="/register" className="underline hover:text-black">
+          <a href="/register" className="underline hover:text-gray-400">
             Register
           </a>
         </div>
