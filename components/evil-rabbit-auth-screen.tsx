@@ -39,7 +39,7 @@ export default function TeamAuth() {
   }  
   return (
   <div className="min-h-screen flex items-center justify-center px-4 bg-black">
-    <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+    <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-md border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
       {!isRequestingAccess ? (
         <>
           <div className="text-center space-y-3">
@@ -90,7 +90,7 @@ export default function TeamAuth() {
                   id="role"
                   value={role}
                   onChange={e => setRole(e.target.value)}
-                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded-xl w-full focus:border-white focus:ring-white"
+                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
                 >
                   <option value="select role">Select Role</option>
                   <option value="designer">Designer</option>
