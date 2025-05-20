@@ -86,19 +86,32 @@ export default function TeamAuth() {
             </div>
           </div>
 
-              <div>
-                <Label htmlFor="role" className="text-[#A0A0A0]">Select Role</Label>
-                <select
-                  id="role"
-                  value={role}
-                  onChange={e => setRole(e.target.value)}
-                  className="bg-black border border-[#333333] text-[#FFFFFF] p-2 rounded w-full focus:border-white focus:ring-white"
-                >
-                  <option value="designer">Designer</option>
-                  <option value="developer">Developer</option>
-                  <option value="admin">Admin</option>
-                </select>
-              </div>
+              <div className="relative">
+  <select
+    id="role"
+    value={role}
+    onChange={e => setRole(e.target.value)}
+    className="bg-black border border-[#333333] text-white p-3 rounded w-full focus:border-white focus:ring-white appearance-none"
+  >
+    <option value="" disabled hidden>
+      Select Role
+    </option>
+    <option value="designer">Designer</option>
+    <option value="developer">Developer</option>
+    <option value="admin">Admin</option>
+  </select>
+  <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</div>
 
               <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center space-x-2 text-[#A0A0A0]">
