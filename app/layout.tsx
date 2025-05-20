@@ -1,10 +1,5 @@
-import { Geist_Sans } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
-
-const geistSans = Geist_Sans({
-  subsets: ['latin'],
-  variable: '--font-geist-sans',
-})
 
 export const metadata = {
   title: 'Evil Rabbit — Access',
@@ -17,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={geistSans.variable}>
-      <body className="font-geistSans bg-white text-black">
+    <html lang="en" className={GeistSans.className}>
+      <body className="bg-white text-black">
         {children}
       </body>
     </html>
