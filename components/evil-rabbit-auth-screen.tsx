@@ -37,7 +37,7 @@ export default function EvilRabbitAuthScreen() {
               type="email"
               placeholder="your@email.com"
               required
-              className="bg-black border text-gray-600 placeholder-[#2E2E2E] focus:border-white"
+              className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white"
               style={{ borderColor: "#333333" }}
             />
           </div>
