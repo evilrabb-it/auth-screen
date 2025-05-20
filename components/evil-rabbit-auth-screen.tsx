@@ -43,7 +43,7 @@ export default function TeamAuth() {
       {!isRequestingAccess ? (
         <>
           <div className="text-center space-y-3">
-            <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={96} height={96} className="mx-auto" />
+            <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
             <h1 className="text-2xl font-semibold tracking-tight text-white">Welcome, Team Members</h1>
             <p className="text-sm text-[#A0A0A0]">Log in to access your team workspace</p>
           </div>
@@ -90,9 +90,9 @@ export default function TeamAuth() {
                   id="role"
                   value={role}
                   onChange={e => setRole(e.target.value)}
-                  className="appearance-none bg-black border border-[#333333] text-[#FFFFFF] p-2 rounded w-full focus:border-white focus:ring-white"
+                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded w-full focus:border-white focus:ring-white"
                 >
-                  <option value="" disabled hidden>Select Role</option>
+                  <option value="select role">Select Role</option>
                   <option value="designer">Designer</option>
                   <option value="developer">Developer</option>
                   <option value="admin">Admin</option>
