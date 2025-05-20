@@ -9,13 +9,14 @@ export default function EvilRabbitAuthScreen() {
     <div className="min-h-screen flex items-center justify-center bg-white p-4">
       <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border border-neutral-800" style={{ backgroundColor: "#000000" }}>
         <div className="flex justify-center">
-          <div className="w-28 h-28 relative">
-            <Image
-              src="/evilrabbit.svg"
-              alt="Evil Rabbit"
-              fill
-              className="object-contain"
-              />
+          <div className="text-center">
+          <Image
+            src="/evilrabbit.svg"
+            alt="Evil Rabbit"
+            width={72}
+            height={72}
+            className="mx-auto"
+          />
             </div>
           <h1 className="text-2xl font-semibold text-white mt-4 tracking-tight">Hello Evil Rabbit</h1>
           <p className="text-sm text-neutral-400 mt-2">Log in to access your space</p>
