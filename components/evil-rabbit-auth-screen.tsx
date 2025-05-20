@@ -90,7 +90,7 @@ export default function TeamAuth() {
                   id="role"
                   value={role}
                   onChange={e => setRole(e.target.value)}
-                  className="appearance-none bg-black border border-[#333333] text-[#666666] p-2 rounded-xl w-full focus:border-white focus:ring-white"
+                  className="appearence-none bg-black border border-[#333333] text-[#666666] focus:border-white focus:ring-white"
                 >
                   <option value="select role">Select Role</option>
                   <option value="designer">Designer</option>
