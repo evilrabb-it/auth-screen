@@ -112,7 +112,7 @@ export default function TeamAuth() {
                     <SelectValue placeholder="Select Role" />
                   </SelectTrigger>
                   <SelectContent className="bg-black text-white border-[#333333]">
-                  <SelectItem disabled value="">Select Role</SelectItem>
+                    <SelectItem disabled value="Select Role">Select Role</SelectItem>
                     <SelectItem value="designer">Designer</SelectItem>
                     <SelectItem value="developer">Developer</SelectItem>
                     <SelectItem value="admin">Admin</SelectItem>
