@@ -187,7 +187,7 @@ export default function TeamAuth() {
                   onChange={e => setAccessReason(e.target.value)}
                   placeholder="Explain why you need access"
                   required
-                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2"
+                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 resize-none"
                   style={{ borderColor: "#333333" }}
                 />
               </div>
