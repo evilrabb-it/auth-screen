@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Team Access – Evil Rabbit',
     description: 'Secure access to Evil Rabbit’s workspace.',
-    url: 'https://yourdomain.com',
+    url: 'https://team-access.vercel.app',
     siteName: 'Evil Rabbit',
     images: [
       {
