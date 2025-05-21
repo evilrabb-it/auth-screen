@@ -28,6 +28,14 @@ export const metadata = {
     description: 'Secure access to Evil Rabbit’s workspace.',
     images: ['/evilrabbit-opengraph.png'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-512x512.png', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
@@ -37,6 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head />
       <body>{children}</body>
     </html>
   )
