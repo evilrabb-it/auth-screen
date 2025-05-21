@@ -97,7 +97,7 @@ export default function TeamAuth() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#666666] hover:text-white"
+                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#333333] hover:text-white"
                     aria-label="Toggle password visibility"
                   >
                     {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
@@ -105,20 +105,20 @@ export default function TeamAuth() {
                 </div>
               </div>
 
-               <div className="space-y-1.5">
-  <label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</label>
-  <select
-    id="role"
-    value={role}
-    onChange={(e) => setRole(e.target.value)}
-    className="w-full bg-black border border-[#333333] text-[#666666] rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-white appearance-none"
-  >
-    <option disabled value="">Select Role</option>
-    <option value="designer">Designer</option>
-    <option value="developer">Developer</option>
-    <option value="admin">Admin</option>
-  </select>
-</div>
+              <div className="space-y-1.5">
+                <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
+                <Select onValueChange={setRole} value={role}>
+                  <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-[#A0A0A0]">
+                    <SelectValue placeholder="Select Role" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-black text-white border-[#333333]">
+                    <SelectItem disabled value="Select Role">Select Role</SelectItem>
+                    <SelectItem value="designer">Designer</SelectItem>
+                    <SelectItem value="developer">Developer</SelectItem>
+                    <SelectItem value="admin">Admin</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
               <div className="flex items-center justify-between text-sm mt-1">
                 <label className="flex items-center space-x-2 text-[#A0A0A0]">
