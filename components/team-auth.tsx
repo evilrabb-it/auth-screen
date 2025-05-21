@@ -107,11 +107,10 @@ export default function TeamAuth() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
-                <SelectTrigger id="role"  className={`w-full border-[#333333] bg-black ${
-                    role && role !== 'Select Role' ? 'text-white' : 'text-[#A0A0A0]'}`}
-                  >
-                  <SelectValue placeholder="Select Role" />
-                </SelectTrigger>
+                <Select onValueChange={setRole}>
+                  <SelectTrigger id="role" className={`w-full border-[#333333] bg-black ${role && role !== 'Select Role' ? 'text-white' : 'text-[#A0A0A0]'}`}>
+                    <SelectValue placeholder="Select Role" />
+                  </SelectTrigger>
                   <SelectContent className="bg-black text-white border-[#333333]">
                     <SelectItem disabled value="Select Role">Select Role</SelectItem>
                     <SelectItem value="designer">Designer</SelectItem>
@@ -201,13 +200,13 @@ export default function TeamAuth() {
               )}
               <div className="flex justify-between">
               <Button
-  type="button"
-  variant="secondary"
-  onClick={() => setIsRequestingAccess(false)}
-  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
->
-  Back to Access
-</Button>
+                type="button"
+                variant="secondary"
+                onClick={() => setIsRequestingAccess(false)}
+                className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+                >
+                Back to Access
+              </Button>
                 <Button 
                   type="submit"
                   className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
@@ -249,17 +248,17 @@ export default function TeamAuth() {
 
               <div className="flex justify-between">
               <Button
-  type="button"
-  variant="secondary"
-  onClick={() => {
-    setIsForgotPassword(false)
-    setForgotStatus("idle")
-    setForgotEmail("")
-  }}
-  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
->
-  Back to Access
-</Button>
+                type="button"
+                variant="secondary"
+                onClick={() => {
+                  setIsForgotPassword(false)
+                    setForgotStatus("idle")
+                      setForgotEmail("")
+                }}
+                className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+                >
+                Back to Access
+              </Button>
                 <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
                   Send Reset Link
                 </Button>
