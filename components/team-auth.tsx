@@ -7,6 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
 import { Eye, EyeOff } from "lucide-react"
+import { Listbox } from "@headlessui/react"
+import { Check, ChevronDown } from "lucide-react"
+import clsx from "clsx"
 import {
   Select,
   SelectContent,
@@ -29,11 +32,11 @@ export default function TeamAuth() {
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault()
-    if (!role || role === "select role") {
+    if (!role) {
       alert("Please select a role")
       return
     }
-    alert(`Logged in as ${role}`)
+    alert(`Logged in as ${role.name}`)
   }
 
   function handleRequestAccess(e: React.FormEvent) {
@@ -107,17 +110,41 @@ export default function TeamAuth() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
-                <Select onValueChange={setRole} value={role}>
-                  <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-[#A0A0A0]">
-                    <SelectValue placeholder="Select Role" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-black text-white border-[#666666]">
-                    <SelectItem disabled value="Select Role">Select Role</SelectItem>
-                    <SelectItem value="designer">Designer</SelectItem>
-                    <SelectItem value="developer">Developer</SelectItem>
-                    <SelectItem value="admin">Admin</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Listbox value={role} onChange={setRole}>
+                  <div className="relative">
+                    <Listbox.Button className="w-full text-left bg-black border border-[#333333] text-[#A0A0A0] rounded-md px-3 py-2 focus:outline-none focus:border-white">
+                      <span>{role ? role.name : "Select Role"}</span>
+                      <ChevronDown className="absolute right-2 top-2.5 h-4 w-4 text-[#666666]" />
+                    </Listbox.Button>
+                    <Listbox.Options className="absolute z-10 mt-1 w-full bg-black border border-[#333333] rounded-md shadow-lg max-h-60 overflow-auto text-white">
+                      {roles.map((r) => (
+                        <Listbox.Option
+                          key={r.id}
+                          value={r}
+                          className={({ active }) =>
+                            clsx(
+                              "cursor-pointer select-none relative py-2 pl-10 pr-4",
+                              active ? "bg-[#2E2E2E]" : "text-[#A0A0A0]"
+                            )
+                          }
+                        >
+                          {({ selected }) => (
+                            <>
+                              <span className={clsx("block truncate", selected && "font-medium text-white")}>
+                                {r.name}
+                              </span>
+                              {selected ? (
+                                <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-white">
+                                  <Check className="h-4 w-4" />
+                                </span>
+                              ) : null}
+                            </>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
 
               <div className="flex items-center justify-between text-sm mt-1">
