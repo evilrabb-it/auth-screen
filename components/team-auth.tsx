@@ -66,7 +66,7 @@ export default function TeamAuth() {
           <>
             <div className="text-center space-y-3">
               <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
-              <h1 className="text-4xl font-bold tracking-tight text-white">Team Access</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-white">Team Access</h1>
               <p className="text-sm text-[#A0A0A0]">Sign in to access your workspace</p>
             </div>
 
@@ -200,10 +200,17 @@ export default function TeamAuth() {
               )}
 
               <div className="flex justify-between">
-                <Button type="button" variant="secondary" onClick={() => setIsRequestingAccess(false)}>
+                <Button  
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setIsRequestingAccess(false)}
+                  className="hover:bg-[#2E2E2E] hover:text-white"
+                  >
                   Back to Access
                 </Button>
-                <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
+                <Button 
+                  type="submit"
+                  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
                   Submit Request
                 </Button>
               </div>
@@ -246,10 +253,11 @@ export default function TeamAuth() {
                   variant="secondary"
                   onClick={() => {
                     setIsForgotPassword(false)
-                    setForgotStatus("idle")
-                    setForgotEmail("")
+                      setForgotStatus("idle")
+                        setForgotEmail("")
                   }}
-                >
+                  className="hover:bg-[#2E2E2E] hover:text-white"
+                  >
                   Back to Access
                 </Button>
                 <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
