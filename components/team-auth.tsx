@@ -198,16 +198,15 @@ export default function TeamAuth() {
               {requestStatus === "submitted" && (
                 <p className="text-green-500 text-sm">Request submitted! Please wait for approval.</p>
               )}
-
               <div className="flex justify-between">
-                <Button  
-                  type="button"
-                  variant="secondary"
-                  onClick={() => setIsRequestingAccess(false)}
-                  className="hover:bg-[#2E2E2E] hover:text-white"
-                  >
-                  Back to Access
-                </Button>
+              <Button
+  type="button"
+  variant="secondary"
+  onClick={() => setIsRequestingAccess(false)}
+  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
+>
+  Back to Access
+</Button>
                 <Button 
                   type="submit"
                   className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
@@ -248,18 +247,18 @@ export default function TeamAuth() {
               )}
 
               <div className="flex justify-between">
-                <Button
-                  type="button"
-                  variant="secondary"
-                  onClick={() => {
-                    setIsForgotPassword(false)
-                      setForgotStatus("idle")
-                        setForgotEmail("")
-                  }}
-                  className="hover:bg-[#2E2E2E] hover:text-white"
-                  >
-                  Back to Access
-                </Button>
+              <Button
+  type="button"
+  variant="secondary"
+  onClick={() => {
+    setIsForgotPassword(false)
+    setForgotStatus("idle")
+    setForgotEmail("")
+  }}
+  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
+>
+  Back to Access
+</Button>
                 <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
                   Send Reset Link
                 </Button>
