@@ -137,7 +137,7 @@ export default function TeamAuth() {
                 </button>
               </div>
 
-              <Button type="submit" className="w-full bg-transparent text-white font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white">
+              <Button type="submit" className="w-full bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white">
                 Sign In
               </Button>
             </form>
@@ -203,7 +203,7 @@ export default function TeamAuth() {
   type="button"
   variant="secondary"
   onClick={() => setIsRequestingAccess(false)}
-  className="bg-transparent text-white font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
 >
   Back to Access
 </Button>
@@ -255,7 +255,7 @@ export default function TeamAuth() {
     setForgotStatus("idle")
     setForgotEmail("")
   }}
-  className="bg-transparent text-white font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
 >
   Back to Access
 </Button>
