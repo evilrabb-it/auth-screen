@@ -66,7 +66,7 @@ export default function TeamAuth() {
           <>
             <div className="text-center space-y-3">
               <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
-              <h1 className="text-2xl font-semibold tracking-tight text-white">Auth</h1>
+              <h1 className="text-4xl font-semibold tracking-tight text-white">Auth</h1>
               <p className="text-sm text-[#A0A0A0]">Access your team workspace</p>
             </div>
 
@@ -160,7 +160,7 @@ export default function TeamAuth() {
         {isRequestingAccess && (
           <>
             <div className="text-center">
-              <h2 className="text-xl font-semibold text-white">Request Team Access</h2>
+              <h2 className="text-2xl font-semibold text-white">Request Access</h2>
               <p className="text-sm mt-1 text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
             </div>
 
@@ -214,7 +214,7 @@ export default function TeamAuth() {
         {isForgotPassword && (
           <>
             <div className="text-center">
-              <h2 className="text-xl font-semibold text-white">Reset Password</h2>
+              <h2 className="text-2xl font-semibold text-white">Reset Password</h2>
               <p className="text-sm mt-1 text-[#A0A0A0]">We’ll send a reset link to your email</p>
             </div>
 
