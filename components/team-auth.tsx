@@ -108,7 +108,7 @@ export default function TeamAuth() {
               <div className="space-y-1.5">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
                 <Select onValueChange={setRole} value={role}>
-                  <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-[#666666]">
+                  <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-[#A0A0A0] custom-select-trigger">
                     <SelectValue placeholder="Select Role" />
                   </SelectTrigger>
                   <SelectContent className="bg-black text-white border-[#333333]">
