@@ -66,7 +66,7 @@ export default function TeamAuth() {
           <>
             <div className="text-center space-y-3">
               <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
-              <h1 className="text-4xl font-semibold tracking-tight text-white">Auth</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-white">Auth</h1>
               <p className="text-sm text-[#A0A0A0]">Access your team workspace</p>
             </div>
 
@@ -174,7 +174,7 @@ export default function TeamAuth() {
                   onChange={e => setAccessEmail(e.target.value)}
                   placeholder="your@email.com"
                   required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white"
+                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white"
                   style={{ borderColor: "#333333" }}
                 />
               </div>
@@ -187,7 +187,7 @@ export default function TeamAuth() {
                   onChange={e => setAccessReason(e.target.value)}
                   placeholder="Explain why you need access"
                   required
-                  className="bg-black border text-[#666666] placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded"
+                  className="bg-black border text-[#666666] rounded-md placeholder-[#2E2E2E] focus:border-white focus:ring-white w-full p-2 rounded"
                   style={{ borderColor: "#333333" }}
                 />
               </div>
