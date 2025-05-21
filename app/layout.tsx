@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Evil Rabbit — Access',
-  description: 'Secure access to Evil Rabbit’s platform. Sign in or register to continue.',
+  title: 'Team Access',
+  description: 'Secure access to Evil Rabbit’s workspace. Sign in or request to continue.',
 }
 
 export default function RootLayout({
