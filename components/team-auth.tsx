@@ -66,8 +66,8 @@ export default function TeamAuth() {
           <>
             <div className="text-center space-y-3">
               <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
-              <h1 className="text-2xl font-semibold tracking-tight text-white">Welcome, Team Members</h1>
-              <p className="text-sm text-[#A0A0A0]">Log in to access your team workspace</p>
+              <h1 className="text-2xl font-semibold tracking-tight text-white">Auth</h1>
+              <p className="text-sm text-[#A0A0A0]">Access your team workspace</p>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-3">
@@ -97,7 +97,7 @@ export default function TeamAuth() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#333333] hover:text-white"
+                    className="absolute right-2.5 top-1/2 transform -translate-y-1/2 text-[#444444] hover:text-white"
                     aria-label="Toggle password visibility"
                   >
                     {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
