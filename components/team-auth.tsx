@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import Image from "next/image"
 import { Eye, EyeOff } from "lucide-react"
-import { Listbox } from '@headlessui/react"
 import {
   Select,
   SelectContent,
@@ -27,7 +26,6 @@ export default function TeamAuth() {
   const [isForgotPassword, setIsForgotPassword] = useState(false)
   const [forgotEmail, setForgotEmail] = useState("")
   const [forgotStatus, setForgotStatus] = useState<"idle" | "loading" | "sent" | "error">("idle")
-  const roles = ['Designer', 'Developer', 'Admin']
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault()
@@ -107,19 +105,20 @@ export default function TeamAuth() {
                 </div>
               </div>
 
-               <div className="relative">
-    <Listbox.Button className="w-full bg-black border border-[#333333] text-[#A0A0A0] px-4 py-2 rounded-md">
-      {role || 'Select Role'}
-    </Listbox.Button>
-    <Listbox.Options className="absolute mt-1 w-full bg-black border border-[#333333] text-white rounded-md z-10">
-      {roles.map((r) => (
-        <Listbox.Option key={r} value={r} className="px-4 py-2 hover:bg-[#1a1a1a]">
-          {r}
-        </Listbox.Option>
-      ))}
-    </Listbox.Options>
-  </div>
-</Listbox>
+               <div className="space-y-1.5">
+  <label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</label>
+  <select
+    id="role"
+    value={role}
+    onChange={(e) => setRole(e.target.value)}
+    className="w-full bg-black border border-[#333333] text-[#666666] rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-white appearance-none"
+  >
+    <option disabled value="">Select Role</option>
+    <option value="designer">Designer</option>
+    <option value="developer">Developer</option>
+    <option value="admin">Admin</option>
+  </select>
+</div>
 
               <div className="flex items-center justify-between text-sm mt-1">
                 <label className="flex items-center space-x-2 text-[#A0A0A0]">
