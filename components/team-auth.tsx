@@ -111,7 +111,7 @@ export default function TeamAuth() {
                   <SelectTrigger id="role" className="w-full border-[#333333] bg-black text-white">
                     <SelectValue placeholder="Select Role" />
                   </SelectTrigger>
-                  <SelectContent className="bg-black text-white border-[#333333]">
+                  <SelectContent className="bg-black text-[#666666] border-[#333333]">
                     <SelectItem disabled value="Select Role">Select Role</SelectItem>
                     <SelectItem value="designer">Designer</SelectItem>
                     <SelectItem value="developer">Developer</SelectItem>
@@ -250,7 +250,7 @@ export default function TeamAuth() {
                     setForgotEmail("")
                   }}
                 >
-                  Back
+                  Back to Login
                 </Button>
                 <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
                   Send Reset Link
