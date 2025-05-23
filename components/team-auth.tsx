@@ -61,7 +61,7 @@ export default function TeamAuth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black">
-      <Card className="w-full max-w-sm p-6 sm:p-8 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+      <Card className="w-full max-w-sm p-6 sm:p-6 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
         {!isRequestingAccess && !isForgotPassword && (
           <>
             <div className="text-center space-y-3">
