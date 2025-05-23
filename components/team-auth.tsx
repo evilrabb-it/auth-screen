@@ -65,7 +65,7 @@ export default function TeamAuth() {
         {!isRequestingAccess && !isForgotPassword && (
           <>
             <div className="text-center space-y-3">
-              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={72} height={72} />
+              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={72} height={72} className="mx-auto" />
               <h1 className="text-2xl font-semibold tracking-normal text-white">Team Access</h1>
               <p className="text-sm text-[#A0A0A0]">Sign in to access your workspace</p>
             </div>
