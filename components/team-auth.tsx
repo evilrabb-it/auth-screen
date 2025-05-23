@@ -61,11 +61,11 @@ export default function TeamAuth() {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-black">
-      <Card className="w-full max-w-sm p-4 space-y-4 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+      <Card className="w-full max-w-sm p-6 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
         {!isRequestingAccess && !isForgotPassword && (
           <>
             <div className="text-center space-y-3">
-              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
+              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={72} height={72} />
               <h1 className="text-2xl font-semibold tracking-normal text-white">Team Access</h1>
               <p className="text-sm text-[#A0A0A0]">Sign in to access your workspace</p>
             </div>
