@@ -119,7 +119,7 @@ export default function TeamAuth() {
                 </Select>
               </div>
 
-              <div className="flex items-center justify-between text-sm mt-1">
+              <div className="flex items-center justify-between text-sm">
                 <label className="flex items-center space-x-2 text-[#A0A0A0]">
                   <input
                     type="checkbox"
@@ -141,7 +141,7 @@ export default function TeamAuth() {
               </Button>
             </form>
 
-            <div className="text-center text-sm text-[#A0A0A0]">
+            <div className="text-center text-sm text-[#A0A0A0] mt-2">
               Don’t have access yet?{" "}
               <button
                 className="text-white hover:text-[#666666] focus:outline-none"
@@ -272,4 +272,4 @@ export default function TeamAuth() {
       </Card>
     </div>
   )
-                }
+}
