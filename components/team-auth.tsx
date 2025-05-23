@@ -22,7 +22,6 @@ export default function TeamAuth() {
   const [accessEmail, setAccessEmail] = useState("")
   const [accessReason, setAccessReason] = useState("")
   const [requestStatus, setRequestStatus] = useState<"idle" | "submitted" | "error">("idle")
-
   const [isForgotPassword, setIsForgotPassword] = useState(false)
   const [forgotEmail, setForgotEmail] = useState("")
   const [forgotStatus, setForgotStatus] = useState<"idle" | "loading" | "sent" | "error">("idle")
@@ -60,17 +59,17 @@ export default function TeamAuth() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 bg-black">
-      <Card className="w-full max-w-sm p-6 space-y-2 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 bg-black">
+      <Card className="w-full max-w-md p-4 sm:p-6 space-y-3 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
         {!isRequestingAccess && !isForgotPassword && (
           <>
-            <div className="text-center space-y-3">
-              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={72} height={72} className="mx-auto" />
-              <h1 className="text-2xl font-semibold tracking-normal text-white">Team Access</h1>
+            <div className="text-center space-y-2">
+              <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
+              <h1 className="text-2xl font-semibold tracking-tight text-white">Team Access</h1>
               <p className="text-sm text-[#A0A0A0]">Sign in to access your workspace</p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-3">
+            <form onSubmit={handleLogin} className="space-y-2">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm text-[#A0A0A0]">Email Address</Label>
                 <Input
@@ -142,7 +141,7 @@ export default function TeamAuth() {
               </Button>
             </form>
 
-            <div className="text-center text-sm text-[#A0A0A0] mt-2">
+            <div className="text-center text-sm text-[#A0A0A0]">
               Don’t have access yet?{" "}
               <button
                 className="text-white hover:text-[#666666] focus:outline-none"
@@ -159,12 +158,12 @@ export default function TeamAuth() {
 
         {isRequestingAccess && (
           <>
-            <div className="text-center">
+            <div className="text-center space-y-2">
               <h2 className="text-2xl font-semibold text-white">Request Access</h2>
-              <p className="text-sm mt-1 text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
+              <p className="text-sm text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
             </div>
 
-            <form onSubmit={handleRequestAccess} className="space-y-4">
+            <form onSubmit={handleRequestAccess} className="space-y-2">
               <div className="space-y-2">
                 <Label htmlFor="accessEmail" className="text-[#A0A0A0]">Email</Label>
                 <Input
@@ -199,17 +198,18 @@ export default function TeamAuth() {
                 <p className="text-green-500 text-sm">Request submitted! Please wait for approval.</p>
               )}
               <div className="flex justify-between">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setIsRequestingAccess(false)}
-                className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setIsRequestingAccess(false)}
+                  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
                 >
-                Back to Access
-              </Button>
+                  Back to Access
+                </Button>
                 <Button 
                   type="submit"
-                  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
+                  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
+                >
                   Submit Request
                 </Button>
               </div>
@@ -219,12 +219,12 @@ export default function TeamAuth() {
 
         {isForgotPassword && (
           <>
-            <div className="text-center">
+            <div className="text-center space-y-2">
               <h2 className="text-2xl font-semibold text-white">Reset Password</h2>
-              <p className="text-sm mt-1 text-[#A0A0A0]">We’ll send a reset link to your email</p>
+              <p className="text-sm text-[#A0A0A0]">We’ll send a reset link to your email</p>
             </div>
 
-            <form onSubmit={handleForgotPassword} className="space-y-3">
+            <form onSubmit={handleForgotPassword} className="space-y-2">
               <div className="space-y-2">
                 <Label htmlFor="forgotEmail" className="text-[#A0A0A0]">Email</Label>
                 <Input
@@ -247,19 +247,22 @@ export default function TeamAuth() {
               )}
 
               <div className="flex justify-between">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => {
-                  setIsForgotPassword(false)
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => {
+                    setIsForgotPassword(false)
                     setForgotStatus("idle")
-                      setForgotEmail("")
-                }}
-                className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
+                    setForgotEmail("")
+                  }}
+                  className="bg-white text-black font-medium border border-[#333333] hover:bg-[#2E2E2E] hover:text-white"
                 >
-                Back to Access
-              </Button>
-                <Button type="submit" className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white">
+                  Back to Access
+                </Button>
+                <Button 
+                  type="submit" 
+                  className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
+                >
                   Send Reset Link
                 </Button>
               </div>
@@ -269,4 +272,4 @@ export default function TeamAuth() {
       </Card>
     </div>
   )
-}
+                }
