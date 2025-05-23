@@ -71,7 +71,7 @@ export default function TeamAuth() {
             </div>
 
             <form onSubmit={handleLogin} className="space-y-3">
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm text-[#A0A0A0]">Email Address</Label>
                 <Input
                   id="email"
@@ -83,7 +83,7 @@ export default function TeamAuth() {
                 />
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm text-[#A0A0A0]">Password</Label>
                 <div className="relative">
                   <Input
@@ -105,7 +105,7 @@ export default function TeamAuth() {
                 </div>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
                 <Select onValueChange={setRole}>
                   <SelectTrigger id="role" className={`w-full border-[#333333] bg-black ${role && role !== 'Select Role' ? 'text-white' : 'text-[#A0A0A0]'}`}>
@@ -224,7 +224,7 @@ export default function TeamAuth() {
               <p className="text-sm mt-1 text-[#A0A0A0]">We’ll send a reset link to your email</p>
             </div>
 
-            <form onSubmit={handleForgotPassword} className="space-y-4">
+            <form onSubmit={handleForgotPassword} className="space-y-3">
               <div className="space-y-2">
                 <Label htmlFor="forgotEmail" className="text-[#A0A0A0]">Email</Label>
                 <Input
