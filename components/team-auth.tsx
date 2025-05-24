@@ -22,6 +22,7 @@ export default function TeamAuth() {
   const [accessEmail, setAccessEmail] = useState("")
   const [accessReason, setAccessReason] = useState("")
   const [requestStatus, setRequestStatus] = useState<"idle" | "submitted" | "error">("idle")
+
   const [isForgotPassword, setIsForgotPassword] = useState(false)
   const [forgotEmail, setForgotEmail] = useState("")
   const [forgotStatus, setForgotStatus] = useState<"idle" | "loading" | "sent" | "error">("idle")
@@ -59,18 +60,19 @@ export default function TeamAuth() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 bg-black">
-      <Card className="w-full max-w-md p-4 sm:p-6 space-y-3 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+    <div className="min-h-screen flex items-center justify-center px-4 bg-black">
+      <Card className="w-full max-w-md p-8 space-y-6 shadow-xl rounded-xl border" style={{ backgroundColor: "#000", borderColor: "#333" }}>
+        {/* Sign In */}
         {!isRequestingAccess && !isForgotPassword && (
           <>
-            <div className="text-center space-y-2">
+            <div className="text-center space-y-3">
               <Image src="/evilrabbit.svg" alt="Evil Rabbit" width={80} height={80} className="mx-auto" />
               <h1 className="text-2xl font-semibold tracking-tight text-white">Team Access</h1>
               <p className="text-sm text-[#A0A0A0]">Sign in to access your workspace</p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-2">
-              <div className="space-y-2">
+            <form onSubmit={handleLogin} className="space-y-3">
+              <div className="space-y-1.5">
                 <Label htmlFor="email" className="text-sm text-[#A0A0A0]">Email Address</Label>
                 <Input
                   id="email"
@@ -82,7 +84,7 @@ export default function TeamAuth() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <Label htmlFor="password" className="text-sm text-[#A0A0A0]">Password</Label>
                 <div className="relative">
                   <Input
@@ -104,7 +106,7 @@ export default function TeamAuth() {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <Label htmlFor="role" className="text-sm text-[#A0A0A0]">Role</Label>
                 <Select onValueChange={setRole}>
                   <SelectTrigger id="role" className={`w-full border-[#333333] bg-black ${role && role !== 'Select Role' ? 'text-white' : 'text-[#A0A0A0]'}`}>
@@ -119,7 +121,7 @@ export default function TeamAuth() {
                 </Select>
               </div>
 
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center justify-between text-sm mt-1">
                 <label className="flex items-center space-x-2 text-[#A0A0A0]">
                   <input
                     type="checkbox"
@@ -156,14 +158,15 @@ export default function TeamAuth() {
           </>
         )}
 
+        {/* Request Access */}
         {isRequestingAccess && (
           <>
-            <div className="text-center space-y-2">
+            <div className="text-center">
               <h2 className="text-2xl font-semibold text-white">Request Access</h2>
-              <p className="text-sm text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
+              <p className="text-sm mt-1 text-[#A0A0A0]">Fill the form below and wait for admin approval</p>
             </div>
 
-            <form onSubmit={handleRequestAccess} className="space-y-2">
+            <form onSubmit={handleRequestAccess} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="accessEmail" className="text-[#A0A0A0]">Email</Label>
                 <Input
@@ -197,6 +200,7 @@ export default function TeamAuth() {
               {requestStatus === "submitted" && (
                 <p className="text-green-500 text-sm">Request submitted! Please wait for approval.</p>
               )}
+
               <div className="flex justify-between">
                 <Button
                   type="button"
@@ -206,7 +210,7 @@ export default function TeamAuth() {
                 >
                   Back to Access
                 </Button>
-                <Button 
+                <Button
                   type="submit"
                   className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
                 >
@@ -217,14 +221,15 @@ export default function TeamAuth() {
           </>
         )}
 
+        {/* Forgot Password */}
         {isForgotPassword && (
           <>
-            <div className="text-center space-y-2">
+            <div className="text-center">
               <h2 className="text-2xl font-semibold text-white">Reset Password</h2>
-              <p className="text-sm text-[#A0A0A0]">We’ll send a reset link to your email</p>
+              <p className="text-sm mt-1 text-[#A0A0A0]">We’ll send a reset link to your email</p>
             </div>
 
-            <form onSubmit={handleForgotPassword} className="space-y-2">
+            <form onSubmit={handleForgotPassword} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="forgotEmail" className="text-[#A0A0A0]">Email</Label>
                 <Input
@@ -259,8 +264,8 @@ export default function TeamAuth() {
                 >
                   Back to Access
                 </Button>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="bg-white text-black font-medium border border-transparent hover:bg-[#2E2E2E] hover:text-white"
                 >
                   Send Reset Link
@@ -272,4 +277,4 @@ export default function TeamAuth() {
       </Card>
     </div>
   )
-}
+            }
